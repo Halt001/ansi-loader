@@ -1,0 +1,36 @@
+{
+  "name": "@halt/ansi-loader",
+  "version": "0.0.4",
+  "description": "A simple ansi characters based loader",
+  "main": "lib/index.js",
+  "repository": "github:Halt001/ansi-loader",
+  "scripts": {
+    "build": "tsc",
+    "rollup": "rollup --config rollup.config.js",
+    "clean": "rimraf ./lib ./dist ./demo/lib",
+    "all:dev": "export NODE_ENV=development && npm run all",
+    "all": "npm run clean && tsc && npm run rollup",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve:demo": "cp -r ./lib ./demo && http-server ./demo -p 8080",
+    "publish-npm": "npm publish --access public"
+  },
+  "author": "halt",
+  "license": "ISC",
+  "files": [
+    "lib/index.js",
+    "lib/index.min.js"
+  ],
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^11.0.1",
+    "http-server": "^0.12.3",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.34.1",
+    "rollup-plugin-copy": "^3.3.0",
+    "rollup-plugin-minify-html-literals": "^1.2.5",
+    "rollup-plugin-terser": "^7.0.2",
+    "typescript": "^4.1.2"
+  },
+  "dependencies": {
+    "lit-element": "^2.4.0"
+  }
+}

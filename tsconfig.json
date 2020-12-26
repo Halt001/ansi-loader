@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "lib": ["es2017", "dom"],
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "dist"
+  },
+  "files": [
+    "src/index.ts",
+    "src/loader.ts",
+    "src/splash-screen.ts"
+  ]
+}
