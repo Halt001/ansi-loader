@@ -31,8 +31,9 @@ const config = {
 };
 
 if (process.env.NODE_ENV !== 'development') {
+  console.log('process.env.NODE_ENV', process.env.NODE_ENV);
   config.plugins.push(terser());
-  config.output.sourcemap = false;
+  config.output[0].sourcemap = false;
 }
 
 export default config;

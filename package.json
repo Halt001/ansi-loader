@@ -1,6 +1,6 @@
 {
   "name": "@halt/ansi-loader",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A simple ansi characters based loader",
   "main": "lib/index.js",
   "repository": "github:Halt001/ansi-loader",
@@ -9,6 +9,7 @@
     "rollup": "rollup --config rollup.config.js",
     "clean": "rimraf ./lib ./dist ./demo/lib",
     "all:dev": "export NODE_ENV=development && npm run all",
+    "all:prod": "export NODE_ENV=production && npm run all",
     "all": "npm run clean && tsc && npm run rollup",
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve:demo": "cp -r ./lib ./demo && http-server ./demo -p 8080",
