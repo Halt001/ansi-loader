@@ -18,8 +18,7 @@
   "author": "halt",
   "license": "ISC",
   "files": [
-    "lib/index.js",
-    "lib/index.min.js"
+    "lib/index.js"
   ],
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^11.0.1",
