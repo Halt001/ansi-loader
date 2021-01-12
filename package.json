@@ -1,6 +1,6 @@
 {
   "name": "@halt/ansi-loader",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A simple ansi characters based loader",
   "main": "lib/index.js",
   "repository": "github:Halt001/ansi-loader",

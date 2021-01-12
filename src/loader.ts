@@ -4,6 +4,13 @@ import { LitElement, html, customElement, property, css } from 'lit-element';
 class AnsiLoader extends LitElement {
   @property() size = '32px';
 
+  private timeStart = Date.now();
+
+  constructor() {
+    super();
+    console.log('Ansi-Loader constructor');
+  }
+
   static get styles() {
     return css`
       @keyframes swapDots {
@@ -28,6 +35,11 @@ class AnsiLoader extends LitElement {
     `;
   }
 
+  attributeChangedCallback(name, oldVal, newVal) {
+    console.log('attribute change: ', name, newVal);
+    super.attributeChangedCallback(name, oldVal, newVal);
+  }
+
   render() {
     return html`
       <style>
@@ -37,7 +49,24 @@ class AnsiLoader extends LitElement {
         }
       </style>
 
-      <div class="container"></div>
+      <div class="container" @click="${this.handleClick}"></div>
     `;
+  }
+
+  handleClick() {
+    console.log('clicked ansi-loader');
+    this.sendTimeEvent();
+  }
+
+  sendTimeEvent() {
+    const duration = Date.now() - this.timeStart;
+
+    let event = new CustomEvent('duration', {
+      detail: {
+        duration,
+        timeStart: this.timeStart,
+      }
+    });
+    this.dispatchEvent(event);
   }
 }
