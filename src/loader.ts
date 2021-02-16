@@ -1,34 +1,21 @@
-import { LitElement, html, customElement, property, css } from 'lit-element';
+import { LitElement, html, customElement, property, css, CSSResult } from 'lit-element';
+import styleTvH from './loader.css';
+import { invoke } from 'q';
 
 @customElement('ansi-loader')
 class AnsiLoader extends LitElement {
   @property() size = '32px';
 
   static get styles() {
-    return css`
-      @keyframes swapDots {
-        10% { content: "⠋"; }
-        20% { content: "⠙"; }
-        30% { content: "⠹"; }
-        40% { content: "⠸"; }
-        50% { content: "⠼"; }
-        60% { content: "⠴"; }
-        70% { content: "⠦"; }
-        80% { content: "⠧"; }
-        90% { content: "⠇"; }
-       100% { content: "⠏"; }
-      }
-
-      .container::after {
-        animation: swapDots 700ms linear infinite;
-        display: inline-block;
-        content: "⠋";
-        background: inherit;
-      }
-    `;
+    console.log('styleTvH', styleTvH);
+    debugger;
+    return css([styleTvH] as any);
   }
+  //static styles = styleTvH as any;
 
   render() {
+    console.log('styles', AnsiLoader.styles);
+
     return html`
       <style>
         .container::after {
