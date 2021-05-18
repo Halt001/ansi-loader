@@ -8,7 +8,7 @@ const config = {
   output: [
     {
       file: 'lib/index.js',
-      format: 'es',
+      format: 'iife',
       sourcemap: true,
     },
   ],
